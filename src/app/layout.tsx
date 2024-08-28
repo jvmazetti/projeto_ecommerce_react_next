@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
 const inter = Inter({ subsets: ["latin"] });
+import NavBar from "./components/NavBar";
 
 export const metadata: Metadata = {
   title: "Ecommerce React Next",
@@ -15,7 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <NavBar />
+        <main className='bg-slate-700 h-screen p-16'>
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
